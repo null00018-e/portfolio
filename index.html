@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>YOUR NAME | Robotics Portfolio</title>
-
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Cooper | Robotics Portfolio</title>
+<style>
     /* =========================
        BASIC SETTINGS
     ========================= */
@@ -516,38 +514,73 @@
       }
     }
   </style>
+<style>
+:root {
+  --blue: #52606d;
+  --blue-dark: #36454f;
+  --blue-light: #e9eef1;
+  --ink: #20252b;
+  --paper: #f7f6f2;
+  --card: #ffffff;
+  --border: #d8d6d0;
+  --accent: #8b6f47;
+}
+body {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(247,246,242,.96) !important;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  backdrop-filter: blur(10px);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.nav-links { display:flex; flex-wrap:wrap; gap:8px; }
+.site-nav a { color: var(--ink) !important; text-decoration:none; padding:8px 12px; border-radius:8px; }
+.site-nav a:hover, .site-nav a.active { background: var(--blue-light); color: var(--blue-dark) !important; }
+.site-nav .brand { font-weight:800; letter-spacing:.08em; color:var(--blue-dark) !important; }
+main { max-width:1100px; margin:0 auto; }
+section { min-height:auto !important; padding:70px 22px !important; }
+.hero, .card, .project-card, .skill-card, .reflection-card {
+  border-color: var(--border) !important;
+}
+button, .button, .tag, .pill { background: var(--blue-dark) !important; color:white !important; }
+a { color: var(--blue-dark); }
+@media (max-width: 720px) {
+  .nav-inner { align-items:flex-start; flex-direction:column; }
+}
+</style>
 </head>
-
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-
-  <nav>
-    <div class="container nav-inner">
-
-      <div class="logo">
-        YOUR<span>NAME</span>
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#medbot">Medbot</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">RIVERCOOPER</a>
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a class="" href="about.html">About</a>
+      <a class="" href="medbot.html">Medbot</a>
+      <a class="" href="skills.html">Skills</a>
+      <a class="" href="future.html">Future</a>
+      <a class="" href="contact.html">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-
-  <!-- =========================
-       HERO / HOMEPAGE
-  ========================= -->
-
-  <section class="hero" id="home">
+<main>
+<section class="hero" id="home">
 
     <div class="container hero-grid">
 
@@ -559,7 +592,7 @@
 
         <h1>
           Hi, I'm<br>
-          <span>YOUR NAME.</span>
+          <span>River Cooper.</span>
         </h1>
 
         <p>
@@ -611,623 +644,9 @@
     </div>
 
   </section>
-
-
-  <!-- =========================
-       ABOUT ME
-  ========================= -->
-
-  <section id="about">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="small">01 — About Me</div>
-
-        <h2>Who I Am</h2>
-
-        <p>
-          A little bit about me, what I enjoy, and what
-          I'm working toward.
-        </p>
-
-      </div>
-
-
-      <div class="about-grid">
-
-        <div class="card">
-
-          <h3>👋 About Me</h3>
-
-          <p>
-            Hi! My name is <strong>YOUR NAME</strong>.
-            I'm a student who enjoys technology,
-            robotics, engineering, and learning how
-            things work.
-          </p>
-
-          <br>
-
-          <p>
-            I'm especially interested in using technology
-            to solve problems and turning ideas into
-            something I can actually build and test.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <h3>🎯 What I'm Working On</h3>
-
-          <p>
-            I'm developing my skills in robotics and
-            programming through hands-on projects.
-            One of the projects I've completed is the
-            VEX V5 Medbot challenge.
-          </p>
-
-          <br>
-
-          <p>
-            I plan to keep adding projects to this
-            portfolio as I learn more.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ACHIEVEMENT
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="achievement">
-
-        <div class="achievement-icon">
-          ✓
-        </div>
-
-        <div>
-
-          <div class="tag">
-            COMPLETED PROJECT
-          </div>
-
-          <h3>
-            VEX V5 Medbot Challenge
-          </h3>
-
-          <p>
-            I completed the Medbot challenge using the
-            VEX V5 Speedbot. This project introduced
-            robot behaviors, programming, planning,
-            testing, and iteration.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       MEDBOT PROJECT
-  ========================= -->
-
-  <section id="medbot">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="small">02 — Featured Project</div>
-
-        <h2>VEX V5 Medbot</h2>
-
-        <p>
-          My completed robotics project and what I
-          learned while working through the challenge.
-        </p>
-
-      </div>
-
-
-      <div class="project-header">
-
-        <div class="project-description">
-
-          <h3>What is Medbot?</h3>
-
-          <p>
-            Medbot is a <strong>VEX V5 STEM Lab</strong>
-            focused on robot behaviors and programming.
-            The lab has students build the V5 Speedbot
-            and then use programming concepts to control
-            the robot.
-          </p>
-
-          <p>
-            The skills learned throughout the lab prepare
-            you for the final Automed Challenge.
-          </p>
-
-        </div>
-
-
-        <div class="project-description">
-
-          <h3>What I Had to Do</h3>
-
-          <ul>
-            <li>Build the V5 Speedbot.</li>
-            <li>Learn forward and reverse movement.</li>
-            <li>Learn left and right turns.</li>
-            <li>Plan a robot route.</li>
-            <li>Program the robot.</li>
-            <li>Test and improve the program.</li>
-            <li>Complete the Automed Challenge.</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- SPEEDBOT -->
-
-      <div class="section-title">
-
-        <div class="small">The Build</div>
-
-        <h2>Building the Speedbot</h2>
-
-      </div>
-
-
-      <div class="project-header">
-
-        <div class="image-box">
-
-          <!--
-            REPLACE THIS ENTIRE BOX WITH YOUR PHOTO.
-
-            Example:
-
-            <img src="images/speedbot.jpg"
-                 alt="My completed VEX V5 Speedbot">
-          -->
-
-          <div>
-            <strong>UPLOAD SPEEDBOT PHOTO</strong>
-
-            Put your Speedbot picture here.
-
-            <br><br>
-
-            📷 images/speedbot.jpg
-          </div>
-
-        </div>
-
-
-        <div class="project-description">
-
-          <h3>Starting With the Build</h3>
-
-          <p>
-            Before programming the challenge, I built
-            the VEX V5 Speedbot by following the build
-            instructions.
-          </p>
-
-          <p>
-            The Speedbot provided the physical structure
-            for the programming activities. Building it
-            also helped me understand how the motors,
-            drivetrain, brain, and other components work
-            together.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- CODING -->
-
-      <div class="section-title" style="margin-top:90px;">
-
-        <div class="small">Programming</div>
-
-        <h2>The Coding Challenge</h2>
-
-        <p>
-          I programmed the Speedbot to navigate a
-          hospital layout and deliver medication.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>🤖 How the challenge works</h3>
-
-        <p>
-          The robot begins in the Start Zone and must
-          navigate through the hospital. It travels to
-          the Pharmacy, waits to pick up medication,
-          then travels to the patient rooms.
-        </p>
-
-        <br>
-
-        <p>
-          At each patient room, the robot needs to stop
-          for the required amount of time to simulate
-          delivering medication. The robot also uses the
-          Elevator area when moving between floors.
-          After visiting the patient rooms, it returns
-          to the Start Zone.
-        </p>
-
-        <br>
-
-        <p>
-          The challenge required me to think about the
-          robot's movements before writing the program,
-          test the route, find mistakes, and make changes
-          until the robot could complete the task.
-        </p>
-
-      </div>
-
-
-      <!-- MAP -->
-
-      <div class="section-title" style="margin-top:70px;">
-
-        <div class="small">Navigation</div>
-
-        <h2>Hospital Map</h2>
-
-      </div>
-
-
-      <div class="image-box" style="min-height:420px;">
-
-        <!--
-          REPLACE WITH YOUR MAP SCREENSHOT.
-
-          Example:
-
-          <img src="images/medbot-map.png"
-               alt="Medbot hospital navigation map">
-        -->
-
-        <div>
-
-          <strong>UPLOAD YOUR MEDBOT MAP</strong>
-
-          <br>
-
-          Add your screenshot of the hospital map here.
-
-          <br><br>
-
-          📷 images/medbot-map.png
-
-          <br><br>
-
-          <span>
-            Tip: If possible, mark your robot's route
-            on the map with arrows.
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <!-- CODE SCREENSHOTS -->
-
-      <div class="section-title" style="margin-top:70px;">
-
-        <div class="small">My Code</div>
-
-        <h2>Programming Screenshots</h2>
-
-        <p>
-          Screenshots of the code I created and tested.
-        </p>
-
-      </div>
-
-
-      <div class="screenshots">
-
-        <div class="image-box">
-
-          <!--
-            REPLACE WITH:
-            images/medbot-code-1.png
-          -->
-
-          <div>
-
-            <strong>CODE SCREENSHOT #1</strong>
-
-            Upload a screenshot of your VEXcode here.
-
-            <br><br>
-
-            📷 images/medbot-code-1.png
-
-          </div>
-
-        </div>
-
-
-        <div class="image-box">
-
-          <!--
-            REPLACE WITH:
-            images/medbot-code-2.png
-          -->
-
-          <div>
-
-            <strong>CODE SCREENSHOT #2</strong>
-
-            Upload another screenshot of your VEXcode.
-
-            <br><br>
-
-            📷 images/medbot-code-2.png
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- WHAT I LEARNED -->
-
-      <div class="section-title" style="margin-top:90px;">
-
-        <div class="small">Reflection</div>
-
-        <h2>What I Learned</h2>
-
-      </div>
-
-
-      <div class="process">
-
-        <div class="process-card">
-
-          <div class="number">01 — BUILD</div>
-
-          <h3>Engineering</h3>
-
-          <p>
-            I learned how individual robot parts work
-            together to create a functioning drivetrain.
-          </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-          <div class="number">02 — PLAN</div>
-
-          <h3>Problem Solving</h3>
-
-          <p>
-            I had to break the challenge into smaller
-            movements and behaviors.
-          </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-          <div class="number">03 — CODE</div>
-
-          <h3>Programming</h3>
-
-          <p>
-            I learned how commands can control the
-            robot's movement and timing.
-          </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-          <div class="number">04 — TEST</div>
-
-          <h3>Iteration</h3>
-
-          <p>
-            I tested the robot, found problems, and
-            changed the program to improve its results.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SKILLS
-  ========================= -->
-
-  <section id="skills">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="small">03 — Skills</div>
-
-        <h2>Things I'm Learning</h2>
-
-      </div>
-
-
-      <div class="skills">
-
-        <div class="skill">🤖 Robotics</div>
-
-        <div class="skill">💻 Programming</div>
-
-        <div class="skill">⚙️ Engineering</div>
-
-        <div class="skill">🧠 Problem Solving</div>
-
-        <div class="skill">🗺️ Planning</div>
-
-        <div class="skill">🔧 Building</div>
-
-        <div class="skill">🧪 Testing</div>
-
-        <div class="skill">🔁 Iteration</div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FUTURE PROJECTS
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="small">04 — What's Next</div>
-
-        <h2>Future Projects</h2>
-
-        <p>
-          This portfolio isn't finished. I'll keep
-          adding projects as I learn.
-        </p>
-
-      </div>
-
-
-      <div class="about-grid">
-
-        <div class="card">
-
-          <h3>🚀 Project #2</h3>
-
-          <p>
-            YOUR NEXT ROBOTICS PROJECT WILL GO HERE.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <h3>💡 Project #3</h3>
-
-          <p>
-            ADD ANOTHER PROJECT HERE WHEN YOU'RE READY.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
-  <section id="contact">
-
-    <div class="container">
-
-      <div class="contact">
-
-        <div class="eyebrow">
-          Get In Touch
-        </div>
-
-        <h2>Let's Connect</h2>
-
-        <p>
-          Want to learn more about my projects,
-          robotics work, or what I'm building next?
-        </p>
-
-        <!--
-          CHANGE THE EMAIL BELOW TO YOUR EMAIL.
-        -->
-
-        <a
-          class="button primary"
-          href="mailto:YOUR-EMAIL@example.com">
-          Email Me
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <div class="container">
-
-      © 2026 YOUR NAME · Robotics & STEM Portfolio
-
-    </div>
-
-  </footer>
-
+</main>
+<footer>
+  <p>© 2026 River Cooper · Robotics &amp; STEM Portfolio</p>
+</footer>
 </body>
 </html>
