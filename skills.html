@@ -3,620 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skills & Reflection | River Cooper</title>
-<style>
-    /* =========================
-       BASIC SETTINGS
-    ========================= */
-
-    :root {
-      --bg: #070b14;
-      --bg2: #0d1424;
-      --card: rgba(18, 28, 48, 0.75);
-      --blue: #35a7ff;
-      --cyan: #58e6ff;
-      --purple: #8c5cff;
-      --white: #f5f8ff;
-      --gray: #aab6c8;
-      --green: #48e09b;
-      --border: rgba(255,255,255,0.09);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 80% 10%, rgba(53,167,255,.15), transparent 30%),
-        radial-gradient(circle at 10% 40%, rgba(140,92,255,.12), transparent 30%),
-        var(--bg);
-      color: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(7,11,20,.75);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: var(--cyan);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--gray);
-      font-size: .95rem;
-      transition: .2s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 70px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--cyan);
-      font-size: .9rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: .95;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 600px;
-      color: var(--gray);
-      font-size: 1.15rem;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      padding: 13px 22px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: .2s;
-      display: inline-block;
-    }
-
-    .primary {
-      background: linear-gradient(90deg, var(--blue), var(--purple));
-    }
-
-    .secondary {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ROBOT VISUAL */
-
-    .robot-card {
-      height: 400px;
-      border: 1px solid var(--border);
-      border-radius: 25px;
-      background:
-        linear-gradient(145deg, rgba(53,167,255,.12), rgba(140,92,255,.08)),
-        var(--card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 30px 80px rgba(0,0,0,.35);
-    }
-
-    .robot-placeholder {
-      width: 75%;
-      height: 65%;
-      border: 2px dashed rgba(88,230,255,.35);
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--gray);
-      padding: 30px;
-    }
-
-    .robot-placeholder strong {
-      display: block;
-      color: var(--cyan);
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
-
-    section {
-      padding: 110px 0;
-    }
-
-    .section-title {
-      margin-bottom: 50px;
-    }
-
-    .section-title .small {
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: .8rem;
-      font-weight: bold;
-    }
-
-    .section-title h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-top: 8px;
-    }
-
-    .section-title p {
-      color: var(--gray);
-      max-width: 700px;
-      margin-top: 12px;
-    }
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--gray);
-    }
-
-    /* =========================
-       ACHIEVEMENT
-    ========================= */
-
-    .achievement {
-      border: 1px solid rgba(72,224,155,.25);
-      background:
-        linear-gradient(120deg, rgba(72,224,155,.08), rgba(53,167,255,.06)),
-        var(--card);
-      border-radius: 25px;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .achievement-icon {
-      width: 90px;
-      height: 90px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(72,224,155,.12);
-      font-size: 2.5rem;
-    }
-
-    .achievement h3 {
-      font-size: 1.7rem;
-      margin-bottom: 7px;
-    }
-
-    .achievement p {
-      color: var(--gray);
-    }
-
-    .tag {
-      display: inline-block;
-      color: var(--green);
-      border: 1px solid rgba(72,224,155,.25);
-      background: rgba(72,224,155,.08);
-      padding: 5px 10px;
-      border-radius: 50px;
-      font-size: .75rem;
-      margin-bottom: 10px;
-    }
-
-    /* =========================
-       MEDBOT
-    ========================= */
-
-    .project-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    .project-description {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 35px;
-    }
-
-    .project-description h3 {
-      font-size: 1.7rem;
-      margin-bottom: 15px;
-    }
-
-    .project-description p {
-      color: var(--gray);
-      margin-bottom: 15px;
-    }
-
-    .project-description ul {
-      padding-left: 20px;
-      color: var(--gray);
-    }
-
-    .project-description li {
-      margin: 7px 0;
-    }
-
-    /* =========================
-       IMAGE PLACEHOLDERS
-    ========================= */
-
-    .image-box {
-      border-radius: 18px;
-      border: 2px dashed rgba(88,230,255,.25);
-      background: rgba(255,255,255,.025);
-      min-height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-      color: var(--gray);
-      overflow: hidden;
-    }
-
-    .image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .image-box strong {
-      display: block;
-      color: var(--cyan);
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-
-    .image-box span {
-      font-size: .9rem;
-    }
-
-    .screenshots {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 25px;
-    }
-
-    /* =========================
-       PROCESS
-    ========================= */
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .process-card {
-      padding: 25px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: 16px;
-    }
-
-    .number {
-      color: var(--cyan);
-      font-size: .8rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .process-card p {
-      color: var(--gray);
-      font-size: .9rem;
-    }
-
-    /* =========================
-       SKILLS
-    ========================= */
-
-    .skills {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .skill {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      padding: 10px 16px;
-      border-radius: 50px;
-      color: var(--gray);
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      text-align: center;
-      padding: 70px 30px;
-      border-radius: 25px;
-      background:
-        radial-gradient(circle at center, rgba(53,167,255,.13), transparent 60%),
-        var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .contact p {
-      color: var(--gray);
-      max-width: 550px;
-      margin: 15px auto 25px;
-    }
-
-    footer {
-      padding: 35px 0;
-      border-top: 1px solid var(--border);
-      color: #758196;
-      font-size: .85rem;
-      text-align: center;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .project-header {
-        grid-template-columns: 1fr;
-      }
-
-      .robot-card {
-        height: 300px;
-      }
-
-      .achievement {
-        grid-template-columns: 1fr;
-      }
-
-      .screenshots {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-    }
-  </style>
+<title>Skills & Achievements | River Cooper</title>
 <style>
 :root {
-  --blue: #52606d;
-  --blue-dark: #36454f;
-  --blue-light: #e9eef1;
-  --ink: #20252b;
-  --paper: #f7f6f2;
-  --card: #ffffff;
-  --border: #d8d6d0;
-  --accent: #8b6f47;
+  --blue:#52606d; --blue-dark:#36454f; --blue-light:#e9eef1;
+  --ink:#20252b; --paper:#f7f6f2; --card:#fff; --border:#d8d6d0;
+  --accent:#8b6f47; --muted:#626b73;
 }
-body {
-  background: var(--paper) !important;
-  color: var(--ink) !important;
-}
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(247,246,242,.96) !important;
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 12px rgba(0,0,0,.06);
-  backdrop-filter: blur(10px);
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 14px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.nav-links { display:flex; flex-wrap:wrap; gap:8px; }
-.site-nav a { color: var(--ink) !important; text-decoration:none; padding:8px 12px; border-radius:8px; }
-.site-nav a:hover, .site-nav a.active { background: var(--blue-light); color: var(--blue-dark) !important; }
-.site-nav .brand { font-weight:800; letter-spacing:.08em; color:var(--blue-dark) !important; }
-main { max-width:1100px; margin:0 auto; }
-section { min-height:auto !important; padding:70px 22px !important; }
-.hero, .card, .project-card, .skill-card, .reflection-card {
-  border-color: var(--border) !important;
-}
-button, .button, .tag, .pill { background: var(--blue-dark) !important; color:white !important; }
-a { color: var(--blue-dark); }
-@media (max-width: 720px) {
-  .nav-inner { align-items:flex-start; flex-direction:column; }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-nav{position:sticky;top:0;z-index:1000;background:rgba(247,246,242,.96);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1100px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.08em;color:var(--blue-dark)}
+.nav-links{display:flex;flex-wrap:wrap;gap:8px}
+.nav-links a{padding:8px 12px;border-radius:8px}
+.nav-links a:hover,.nav-links a.active{background:var(--blue-light);color:var(--blue-dark)}
+main{max-width:1100px;margin:auto}
+.hero{padding:105px 22px 75px}
+.eyebrow,.small{color:var(--blue-dark);text-transform:uppercase;letter-spacing:3px;font-size:.8rem;font-weight:800}
+h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:.98;letter-spacing:-3px;margin:14px 0 22px}
+.hero p{max-width:720px;color:var(--muted);font-size:1.15rem}
+section{padding:30px 22px 75px}
+.section-title{margin-bottom:32px}
+.section-title h2{font-size:clamp(2rem,5vw,3.2rem);margin-top:8px}
+.section-title p{color:var(--muted);max-width:720px;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px}
+.card h3{font-size:1.45rem;margin:9px 0 10px}
+.card p{color:var(--muted)}
+.card ul{margin:15px 0 0 20px;color:var(--muted)}
+.card li{margin:6px 0}
+.number{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:2px}
+.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.skill{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:17px;font-weight:700}
+.achievement{border-left:5px solid var(--accent)}
+.score{font-size:2.5rem;font-weight:900;color:var(--blue-dark);line-height:1;margin:10px 0}
+.math-highlight{background:var(--blue-dark);color:white;border-radius:22px;padding:38px}
+.math-highlight p{color:#e8edf0;max-width:760px}
+.math-highlight h2{font-size:2rem;margin-bottom:10px}
+footer{padding:35px 22px;border-top:1px solid var(--border);color:#68727b;font-size:.85rem;text-align:center}
+@media(max-width:720px){.nav-inner{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.skill-grid{grid-template-columns:repeat(2,1fr)}.hero{padding-top:75px}h1{letter-spacing:-2px}}
 </style>
 </head>
 <body>
-
 <nav class="site-nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">RIVERCOOPER</a>
     <div class="nav-links">
-      <a class="" href="index.html">Home</a>
-      <a class="" href="about.html">About</a>
-      <a class="" href="medbot.html">Medbot</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="medbot.html">Medbot</a>
       <a class="active" href="skills.html">Skills</a>
-      <a class="" href="future.html">Future</a>
-      <a class="" href="contact.html">Contact</a>
+      <a href="future.html">Future</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </nav>
 
 <main>
-<section id="skills">
+  <div class="hero">
+    <div class="eyebrow">03 — Skills & Achievements</div>
+    <h1>What I've Built<br>& What I've Achieved</h1>
+    <p>
+      My skills have grown through robotics projects, programming,
+      academic challenges, and activities that have pushed me to
+      solve problems and keep improving.
+    </p>
+  </div>
 
-    <div class="container">
+  <section>
+    <div class="section-title">
+      <div class="small">Core Skills</div>
+      <h2>Things I'm Learning</h2>
+      <p>Skills I've developed through my VEX robotics work and school.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill">🤖 Robotics</div>
+      <div class="skill">💻 C++ Programming</div>
+      <div class="skill">⚙️ Engineering</div>
+      <div class="skill">🧠 Problem Solving</div>
+      <div class="skill">🗺️ Planning</div>
+      <div class="skill">🔧 Building</div>
+      <div class="skill">🧪 Testing</div>
+      <div class="skill">🔁 Iteration</div>
+    </div>
+  </section>
 
-      <div class="section-title">
-
-        <div class="small">03 — Skills</div>
-
-        <h2>Things I'm Learning</h2>
-
-      </div>
-
-
-      <div class="skills">
-
-        <div class="skill"> Robotics</div>
-
-        <div class="skill"> Programming</div>
-
-        <div class="skill"> Engineering</div>
-
-        <div class="skill"> Problem Solving</div>
-
-        <div class="skill"> Planning</div>
-
-        <div class="skill"> Building</div>
-
-        <div class="skill"> Testing</div>
-
-        <div class="skill"> Iteration</div>
-
-      </div>
-
+  <section>
+    <div class="section-title">
+      <div class="small">Achievements</div>
+      <h2>Academic & Leadership</h2>
+      <p>Achievements that show the work I put into school, leadership, and STEM.</p>
     </div>
 
+    <div class="grid">
+      <div class="card achievement">
+        <div class="number">01 — LEADERSHIP & SERVICE</div>
+        <h3>Junior National Beta Club</h3>
+        <p>
+          I was a member of Junior National Beta Club. National Beta is a
+          student organization built around four pillars: achievement,
+          character, leadership, and service. Being part of Beta gave me
+          experience as a student leader while emphasizing academic
+          achievement and helping others.
+        </p>
+      </div>
+
+      <div class="card achievement">
+        <div class="number">02 — PREACT 8/9</div>
+        <h3>PreACT</h3>
+        <div class="score">29/30</div>
+        <p>
+          I earned a <strong>29/30 on the 8/9 version of the PreACT.</strong>
+          I earned a <strong>perfect score on the English portion, tying the national highest score.</strong>
+        </p>
+      </div>
+
+      <div class="card achievement">
+        <div class="number">03 — MATHEMATICS</div>
+        <h3>Excellence in Math</h3>
+        <p>
+          I earned recognition for excellence in mathematics and advanced
+          through my math coursework by skipping Algebra I during my
+          freshman year.
+        </p>
+      </div>
+
+      <div class="card achievement">
+        <div class="number">04 — STEM</div>
+        <h3>VEX V5 Medbot Challenge</h3>
+        <p>
+          I completed the VEX V5 Medbot challenge and programmed the robot
+          in C++. The project strengthened my skills in route planning,
+          programming, testing, and problem solving.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="math-highlight">
+      <h2>Math + Robotics</h2>
+      <p>
+        Mathematics is an important part of robotics. Planning distances,
+        turns, timing, and movement all require careful thinking and
+        problem solving. My experience in advanced math gives me a strong
+        foundation that I can apply to robotics and engineering projects.
+      </p>
+    </div>
   </section>
 </main>
+
 <footer>
   <p>© 2026 River Cooper · Robotics &amp; STEM Portfolio</p>
 </footer>
