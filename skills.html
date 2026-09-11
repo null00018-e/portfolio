@@ -39,6 +39,11 @@ section{padding:30px 22px 75px}
 .skill{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:17px;font-weight:700}
 .achievement{border-left:5px solid var(--accent)}
 .score{font-size:2.5rem;font-weight:900;color:var(--blue-dark);line-height:1;margin:10px 0}
+.score-wrap{margin:18px 0 20px}
+.score-label{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:var(--muted);margin-bottom:7px}
+.score-bar{height:9px;background:var(--blue-light);border-radius:99px;overflow:hidden;margin-top:10px}
+.score-fill{height:100%;width:0;border-radius:99px;background:var(--blue-dark);transition:width 1.5s cubic-bezier(.2,.8,.2,1)}
+.score-badge{display:inline-block;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--blue-light);color:var(--blue-dark);font-size:.78rem;font-weight:800}
 .math-highlight{background:var(--blue-dark);color:white;border-radius:22px;padding:38px}
 .math-highlight p{color:#e8edf0;max-width:760px}
 .math-highlight h2{font-size:2rem;margin-bottom:10px}
@@ -113,7 +118,12 @@ footer{padding:35px 22px;border-top:1px solid var(--border);color:#68727b;font-s
       <div class="card achievement">
         <div class="number">02 — PREACT 8/9</div>
         <h3>PreACT</h3>
-        <div class="score">29/30</div>
+        <div class="score-wrap">
+          <div class="score" data-count="29">0/30</div>
+          <div class="score-label">Overall score</div>
+          <div class="score-bar"><div class="score-fill" data-fill="96.67"></div></div>
+          <div class="score-badge">★ English: Perfect Score · Tied National Highest</div>
+        </div>
         <p>
           I earned a <strong>29/30 on the 8/9 version of the PreACT.</strong>
           I earned a <strong>perfect score on the English portion, tying the national highest score.</strong>
@@ -158,5 +168,42 @@ footer{padding:35px 22px;border-top:1px solid var(--border);color:#68727b;font-s
 <footer>
   <p>© 2026 River Cooper · Robotics &amp; STEM Portfolio</p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const score = document.querySelector(".score[data-count]");
+  const fill = document.querySelector(".score-fill[data-fill]");
+  if (!score || !fill) return;
+
+  const animateScore = () => {
+    const target = Number(score.dataset.count);
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      score.textContent = current + "/30";
+      fill.style.width = (Number(fill.dataset.fill) * eased) + "%";
+
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const card = score.closest(".card");
+  const observer = new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      animateScore();
+      obs.disconnect();
+    }
+  }, { threshold: 0.35 });
+
+  observer.observe(card);
+});
+</script>
+
 </body>
 </html>
