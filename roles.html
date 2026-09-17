@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roles | River Cooper Robotics Portfolio</title>
+<style>
+:root{
+  --ink:#20252b;--muted:#626b73;--paper:#f7f6f2;--card:#fff;
+  --border:#d8d6d0;--blue:#52606d;--blue-dark:#36454f;
+  --blue-light:#e9eef1;--accent:#8b6f47;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-nav{position:sticky;top:0;z-index:1000;background:rgba(247,246,242,.96);
+border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1100px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.08em;color:var(--blue-dark)}
+.nav-links{display:flex;flex-wrap:wrap;gap:8px}
+.nav-links a{padding:8px 12px;border-radius:8px}
+.nav-links a:hover,.nav-links a.active{background:var(--blue-light);color:var(--blue-dark)}
+main{max-width:1100px;margin:auto}
+section{padding:65px 22px}
+.eyebrow{color:var(--blue-dark);text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:800}
+h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:.95;letter-spacing:-3px;margin:12px 0 18px}
+h2{font-size:2rem;margin-bottom:12px}
+p{color:var(--muted)}
+.role-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;margin-top:28px}
+.role-card h3{font-size:1.4rem;margin-bottom:10px}
+.role-card ul{margin:18px 0 0 22px;color:var(--muted)}
+.role-card li{margin:8px 0}
+footer{padding:35px 22px;border-top:1px solid var(--border);color:#68727b;font-size:.85rem;text-align:center}
+@media(max-width:800px){.nav-inner{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">RIVER COOPER</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="medbot.html">Medbot</a>
+      <a class="active" href="roles.html">Roles</a>
+      <a href="skills.html">Skills</a>
+      <a href="future.html">Future</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section>
+  <div class="eyebrow">Medbot Team</div>
+  <h1>My Role</h1>
+  <p>
+    My main role on the Medbot project was programming. I was absent during the
+    first few days, so I was not able to help build the robot at the beginning.
+    Cooper and Hunt built and coded the robot during those first few days.
+    When I was able to join the project, I mainly focused on the programming
+    and making sure the robot could complete its challenge.
+  </p>
+
+  <div class="role-card">
+    <h3>Medbot Programmer</h3>
+    <p>
+      I worked mainly on the code that controlled the Speedbot through the
+      hospital challenge. The program had to make the robot start in the Start
+      Zone, navigate through the hospital, travel to the Pharmacy, wait to
+      pick up the medication, and then travel to the patient rooms.
+    </p>
+    <ul>
+      <li>Planned the robot's route through the hospital layout.</li>
+      <li>Programmed the robot's movements and sequence of actions.</li>
+      <li>Used timing to simulate medication delivery at patient rooms.</li>
+      <li>Included the Elevator area as part of the route.</li>
+      <li>Tested the program to find mistakes in the route or movements.</li>
+      <li>Changed and retested the code until the robot could complete the challenge.</li>
+      <li>Worked with the team to make the programming fit the robot that had been built.</li>
+    </ul>
+  </div>
+
+  <div class="role-card">
+    <h3>What I Contributed</h3>
+    <p>
+      Even though I missed the initial building phase, programming became my
+      main contribution to Medbot. I had to think through the robot's movements
+      before writing the program, test the route, find problems, and make
+      changes when something did not work correctly. This gave me experience
+      with planning, C++ programming, testing, and debugging as part of a
+      robotics team.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>River Cooper — Robotics Portfolio</footer>
+</body>
+</html>
