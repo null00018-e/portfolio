@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speedbot | River Cooper Robotics Portfolio</title>
+<style>
+:root{--ink:#20252b;--muted:#626b73;--paper:#f7f6f2;--card:#fff;--border:#d8d6d0;--blue:#52606d;--blue-dark:#36454f;--blue-light:#e9eef1;--accent:#8b6f47}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.site-nav{position:sticky;top:0;z-index:1000;background:rgba(247,246,242,.96);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1100px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.08em;color:var(--blue-dark)}
+.nav-links{display:flex;flex-wrap:wrap;gap:8px}
+.nav-links a{padding:8px 12px;border-radius:8px}
+.nav-links a:hover,.nav-links a.active{background:var(--blue-light);color:var(--blue-dark)}
+main{max-width:1100px;margin:auto}
+section{padding:58px 22px}
+.eyebrow{color:var(--blue-dark);text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:800}
+h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:.95;letter-spacing:-3px;margin:12px 0 20px}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:12px}
+h3{font-size:1.35rem;margin-bottom:10px}
+p{color:var(--muted)}
+.hero{padding-top:78px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.hero-copy{font-size:1.12rem;max-width:680px}
+.hero-art{min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--blue-light);border:1px solid var(--border);border-radius:24px;padding:18px;text-align:center}
+.hero-photo img{display:block;width:100%;max-height:340px;object-fit:cover;border-radius:14px;border:1px solid var(--border)}
+.media-card video{display:block;width:100%;max-height:620px;background:#111;border-radius:12px}
+.media-caption{margin-top:12px;font-weight:700}
+.media-card{padding:18px}
+.package-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.package{width:76px;height:76px;border:2px solid var(--blue-dark);border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:4px 4px 0 rgba(54,69,79,.12)}
+.package:nth-child(2){transform:translateY(-12px)}
+.package:nth-child(3){transform:translateY(8px)}
+.art-caption{margin-top:18px;font-weight:800;color:var(--blue-dark)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.step,.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px}
+.card{margin-top:20px}
+.step-num{font-size:.75rem;font-weight:900;letter-spacing:2px;color:var(--accent)}
+.step h3{margin-top:8px}
+.gear-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.gear-box{padding:24px;border-radius:16px;background:var(--blue-light);color:var(--muted)}
+.gear-box strong{display:block;color:var(--blue-dark);font-size:1.15rem;margin-bottom:8px}
+.note{margin-top:18px;padding:16px 18px;background:#f1eee8;border-left:4px solid var(--accent);border-radius:8px;color:var(--muted)}
+.source-link{display:inline-block;margin-top:15px;color:var(--blue-dark);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+footer{padding:35px 22px;border-top:1px solid var(--border);color:#68727b;font-size:.85rem;text-align:center}
+@media(max-width:800px){.nav-inner{align-items:flex-start;flex-direction:column}.hero-grid,.steps,.gear-grid{grid-template-columns:1fr}.hero-art{min-height:180px}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">RIVER COOPER</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="medbot.html">Medbot</a>
+      <a href="speedbot.html" class="active">Speedbot</a>
+      <a href="roles.html">Roles</a>
+      <a href="skills.html">Skills</a>
+      <a href="future.html">Future</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Robotics Project • Speedy Delivery</div>
+      <h1>Speedbot<br>Package Delivery</h1>
+      <p class="hero-copy">For this project, we worked with a robot that had to pick up three packages and deliver them to their drop-off locations. The challenge involved more than just driving: the robot needed to move carefully, control its attachment, and follow a sequence of actions so each package could be collected and dropped off.</p>
+    </div>
+    <div class="hero-art hero-photo">
+      <img src="speedbot-photo.jpg" alt="Speedbot robot being assembled, showing its metal frame, wheels, and electronics">
+      <div class="art-caption">Building and testing Speedbot</div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="eyebrow">The Challenge</div><h2>Three packages, one route</h2>
+  <p>The goal was to collect all three packages and drop them off. To do that, we had to think about the order of the movements, where the robot needed to stop, and how to operate the mechanism without losing a package.</p>
+  <div class="steps">
+    <article class="step"><div class="step-num">01 — PICK UP</div><h3>Collect a package</h3><p>Move into position and use the robot's attachment to pick up the package.</p></article>
+    <article class="step"><div class="step-num">02 — NAVIGATE</div><h3>Drive to the drop-off</h3><p>Control the robot's movement so it reaches the delivery location without knocking the package loose.</p></article>
+    <article class="step"><div class="step-num">03 — DELIVER</div><h3>Release and repeat</h3><p>Drop off the package, then repeat the process until all three packages have been delivered.</p></article>
+  </div>
+</section>
+<section>
+  <div class="eyebrow">Project Media</div><h2>Speedbot in action</h2>
+  <p>Here is a video of the robot and a photo from the build process.</p>
+  <div class="card media-card">
+    <video controls playsinline preload="metadata" poster="speedbot-photo.jpg">
+      <source src="speedbot-video.mp4" type="video/mp4">
+      Your browser does not support embedded video. You can open speedbot-video.mp4 directly.
+    </video>
+    <p class="media-caption">Speedbot project video</p>
+  </div>
+</section>
+<section>
+  <div class="note"><strong>Gear ratio note:</strong> 12:36</div>
+</section>
+<section>
+  <div class="eyebrow">What I Practiced</div><h2>Planning, coding, and testing</h2>
+  <div class="card">
+    <p>This project gave us practice breaking a larger task into smaller steps. We had to coordinate driving with the package mechanism, make the robot stop in the right places, and test the sequence to see whether all three deliveries worked.</p>
+    <p style="margin-top:12px">If a pickup or drop-off did not work correctly, we could adjust the movement or timing and test again. It showed how small changes in a robot's code or mechanical setup can affect the whole task.</p>
+  </div>
+</section>
+</main>
+<footer>River Cooper — Robotics &amp; STEM Portfolio</footer>
+</body>
+</html>
